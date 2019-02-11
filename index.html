@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Labrador Kennel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <style>
+      .navbar-brand img {
+        margin-right: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="labrador-kennel-logo.png" width="28" height="28" />
+            <h1 class="title is-3">Labrador Kennel</h1>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="section">
+      <div class="columns is-multiline is-centered">
+        <div class="column is-half is-narrow has-text-centered">
+          <p class="content">
+            Labrador is a suite of asynchronous PHP 7 packages written on top of <a href="https://amphp.org">Amp</a>. Our
+            goal is to design a set of libraries and frameworks that facilitates creating high-performing, well-tested,
+            cleanly-separated applications.
+          </p>
+        </div>
+        <div class="column is-three-quarters-desktop is-full-mobile is-full-tablet">
+          <div class="columns is-centered is-multiline">
+            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+              <div class="card">
+                <div class="card-header">
+                  <p class="card-header-title">Core</p>
+                </div>
+                <div class="card-content">
+                  The Core package defines the concepts under which all Labrador applications operate. This repository
+                  defines how Plugins, Applications, and Engines come together to form your app.
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/labrador-kennel/core" class="card-footer-item">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+              <div class="card">
+                <div class="card-header">
+                  <p class="card-header-title">
+                    Async Event
+                  </p>
+                </div>
+                <div class="card-content">
+                  The Async Event package defines a powerful asynchronous event emitter that runs within Amp's event
+                  loop. Semantic events triggered on a specific target allow for app components to be decoupled.
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/labrador-kennel/async-event" class="card-footer-item">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+              <div class="card">
+                <div class="card-header">
+                  <p class="card-header-title">HTTP</p>
+                </div>
+                <div class="card-content">
+                  An HTTP application server written on top of Amp's <a href="https://amphp.org/http-server">http-server</a>
+                  library. Intended to provided an opinionated set of software to create highly-performant, spec-compliant
+                  RESTful APIs.
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/labrador-kennel/http" class="card-footer-item">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+              <div class="card">
+                <div class="card-header">
+                  <p class="card-header-title">HTTP CORS</p>
+                </div>
+                <div class="card-content">
+                  An Amp http-server Middleware that enables spec-compliant Cross Origin Resource Sharing. This library
+                  can be used with any http-server app and is not dependent on any other package.
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/labrador-kennel/http" class="card-footer-item">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+              <div class="card">
+                <div class="card-header">
+                  <p class="card-header-title">Coding Standard</p>
+                </div>
+                <div class="card-content">
+                  A variation of the PSR2 coding standard that eschews Allman style braces for the
+                  <a href="https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)">OTBS</a>. Provides
+                  commands for sniffing Labrador code that must pass before CI goes green.
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/labrador-kennel/coding-standard" class="card-footer-item">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+              <div class="card">
+                <div class="card-header">
+                  <p class="card-header-title">Governance</p>
+                </div>
+                <div class="card-content">
+                  OSS maintenance is in some ways as important as the code itself. If you want to read over Labrador's
+                  Code of Conduct or you'd like details for contributing to Labrador this is the repo for you.
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/labrador-kennel/governance" class="card-footer-item">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <strong>Labrador</strong> is an ambitious project pioneered by <a href="https://cspray.io">Charles Sprayberry</a>.
+        The source code released here is licensed under <a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
+        If you have questions please <a href="mailto:contact@labrador-kennel.io">contact us</a>.
+      </div>
+    </footer>
+  </body>
+</html>
