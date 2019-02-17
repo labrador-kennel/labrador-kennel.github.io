@@ -1,0 +1,41 @@
+---
+---
+@import 'bulma-0.7.4/bulma.sass';
+
+.navbar-brand img {
+  margin-right: .5em;
+}
+
+.code-block {
+  margin: 1em 0 1em 0;
+  padding: 0;
+}
+
+.list-show-bullets {
+  list-style-type: disc;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+h2 {
+  @extend .subtitle;
+  @extend .is-size-3;
+}
+
+h3 {
+  @extend .is-size-4;
+}
+
+h4 {
+  @extend .is-size-5;
+}
+
+h5 {
+  @extend .is-size-6;
+}
+
+p {
+  @extend .content;
+}
