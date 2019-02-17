@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Labrador Kennel</title>
+  <link rel="shortcut icon" href="/img/labrador-kennel-logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+  />
+  <style>
+    .navbar-brand img {
+      margin-right: .5em;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/img/labrador-kennel-logo.png" width="28" height="28" />
+        <h1 class="title is-3">Labrador Kennel</h1>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="section">
+  {{ content }}
+</main>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <strong>Labrador</strong> is an ambitious project pioneered by <a href="https://cspray.io">Charles Sprayberry</a>.
+    The source code released here is licensed under <a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
+    If you have questions please <a href="mailto:contact@labrador-kennel.io">contact us</a>.
+  </div>
+</footer>
+</body>
+</html>
