@@ -12,7 +12,11 @@ layout: default
       <aside class="menu">
         <ul class="menu-list">
           {% for menu_item in site.data.navigation_menu %}
-          <li><a href="{{ menu_item.url }}">{{ menu_item.name }}</a></li>
+          {% assign menu_item_class = '' %}
+          {% if page.url == menu_item.active_check %}
+            {% assign menu_item_class = 'is-active' %}
+          {% endif %}
+          <li><a href="{{ menu_item.url }}" class="{{ menu_item_class }}">{{ menu_item.name }}</a></li>
           {% endfor %}
         </ul>
       </aside>
