@@ -29,12 +29,14 @@ title: Labrador Kennel Packages
               </span>
               GitHub
             </a>
+            {% if package.docs_url %}
             <a href="{{ package.docs_url }}" class="card-footer-item">
               <span class="icon">
                 <i class="fas fa-book"></i>
               </span>
               Docs
             </a>
+            {% endif %}
           </div>
         </div>
       </div>
