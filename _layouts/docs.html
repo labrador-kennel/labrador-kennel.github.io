@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <section>
+        {{ content }}
+      </section>
+    </div>
+    <div class="column is-one-third">
+      <aside class="menu">
+        <ul class="menu-list">
+          {% for menu_item in site.data.navigation_menu %}
+          <li><a href="{{ menu_item.url }}">{{ menu_item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>
