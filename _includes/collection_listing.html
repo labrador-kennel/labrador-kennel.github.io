@@ -1,0 +1,13 @@
+{% assign col = site.collections | where: 'label', include.collection | first %}
+
+<h2 class="subtitle is-size-3">{{col.title}}</h2>
+{% for article in site[include.collection] %}
+  <div class="box">
+    <h3 class="is-size-4"><a href="{{article.url}}">{{article.title}}</a></h3>
+    <p class="content">
+      {{article.excerpt}}
+    </p>
+  </div>
+{% else %}
+  <p class="content has-text-centered has-text-weight-light">There are no articles at this time.</p>
+{% endfor %}

@@ -15,10 +15,6 @@
   {% for external_css in site.external_css %}
   <link rel="stylesheet" href="{{ external_css }}" type="text/css" />
   {% endfor %}
-
-  {% for external_js in site.external_js %}
-  <script src="{{ external_js }}"></script>
-  {% endfor %}
 </head>
 <body>
 <header>
@@ -43,5 +39,10 @@
     If you have questions please <a href="mailto:contact@labrador-kennel.io">contact us</a>.
   </div>
 </footer>
+
+<script src="js/prism.js"></script>
+{% for external_js in site.external_js %}
+<script src="{{ external_js }}"></script>
+{% endfor %}
 </body>
 </html>
