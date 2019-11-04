@@ -17,16 +17,15 @@
   {% endfor %}
 </head>
 <body>
-<header>
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="img/labrador-kennel-logo.png" width="28" height="28" />
-        <h1 class="title is-3">Labrador Kennel</h1>
-      </a>
-    </div>
-  </nav>
-</header>
+
+{% if site.data.labrador.package_name %}
+  {% include package_header.html
+      package_name=site.data.labrador.package_name
+      github_url=site.data.labrador.github_url
+  %}
+{% else %}
+  {% include base_header.html %}
+{% endif %}
 
 <main>
   {{ content }}
