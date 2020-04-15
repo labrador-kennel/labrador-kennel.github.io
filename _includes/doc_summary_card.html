@@ -2,13 +2,13 @@
 
 <div class="card docs-card">
   <div class="card-header">
-    <div class="card-header-title">{{col.title}}</div>
+    <div class="card-header-title">{{ col.title }}</div>
   </div>
   <div class="card-content">
-    {{col.description}}
+    {{ col.description }}
   </div>
   <div class="card-footer">
-    <a class="card-footer-item" href="./{{col.label}}">
+    <a class="card-footer-item" href="{{ col.label | prepend: site.baseurl }}">
       Learn More
     </a>
   </div>
