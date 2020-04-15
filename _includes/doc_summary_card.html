@@ -8,7 +8,7 @@
     {{ col.description }}
   </div>
   <div class="card-footer">
-    <a class="card-footer-item" href="{{ col.label | prepend: site.baseurl }}">
+    <a class="card-footer-item" href="{{ col.label | prepend: '/' | prepend: site.baseurl }}">
       Learn More
     </a>
   </div>
