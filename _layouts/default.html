@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <title>Labrador Kennel</title>
@@ -17,31 +17,44 @@
   {% endfor %}
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="img/labrador-kennel-logo.png" width="28" height="28" />
+          <h1 class="title is-3">Labrador Kennel</h1>
+        </a>
+      </div>
+    </nav>
+  </header>
 
-{% if site.data.labrador.package_name %}
-  {% include package_header.html
-      package_name=site.data.labrador.package_name
-      github_url=site.data.labrador.github_url
-  %}
-{% else %}
-  {% include base_header.html %}
-{% endif %}
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            {{ content }}
+          </div>
 
-<main>
-  {{ content }}
-</main>
+          <div class="column side-nav is-3">
+            <div class="menu">
+              <ul class="menu-list">
+                <li>{% include menu_nav_link.html url="/" label="Installation" %}</li>
+              </ul>
 
-<footer class="footer">
-  <div class="content has-text-centered">
-    <strong>Labrador Kennel</strong> is an ambitious project pioneered by <a href="https://cspray.io">Charles Sprayberry</a>.
-    The source code released here is licensed under <a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
-    If you have questions please <a href="mailto:contact@labrador-kennel.io">contact us</a>.
-  </div>
-</footer>
+              {% include menu_nav_section.html collection="tutorials" %}
+              {% include menu_nav_section.html collection="how-tos" %}
+              {% include menu_nav_section.html collection="references" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script src="js/prism.js"></script>
-{% for external_js in site.external_js %}
-<script src="{{ external_js }}"></script>
-{% endfor %}
+  <script src="js/prism.js"></script>
+  {% for external_js in site.external_js %}
+  <script src="{{ external_js }}"></script>
+  {% endfor %}
 </body>
 </html>
