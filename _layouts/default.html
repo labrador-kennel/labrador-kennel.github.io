@@ -22,7 +22,7 @@
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
           <img src="img/labrador-kennel-logo.png" width="28" height="28" />
-          <h1 class="title is-3">Labrador Kennel</h1>
+          <h1 class="title is-3">Labrador Kennel {% if site.data.package.name %}{{site.data.package.name}}{% endif %}</h1>
         </a>
       </div>
     </nav>
@@ -36,6 +36,7 @@
             {{ content }}
           </div>
 
+          {% if site.data.package.name %}
           <div class="column side-nav is-3">
             <div class="menu">
               <ul class="menu-list">
@@ -47,6 +48,7 @@
               {% include menu_nav_section.html collection="references" %}
             </div>
           </div>
+          {% endif %}
         </div>
       </div>
     </section>
