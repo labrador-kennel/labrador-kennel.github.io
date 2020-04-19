@@ -1,15 +1,19 @@
 {% assign col = site.collections | where: 'label', include.collection | first %}
 
-<div class="card docs-card">
-  <div class="card-header">
-    <div class="card-header-title">{{ col.title }}</div>
-  </div>
-  <div class="card-content">
-    {{ col.description }}
-  </div>
-  <div class="card-footer">
-    <a class="card-footer-item" href="{{ col.label | prepend: '/' | prepend: site.baseurl }}">
-      Learn More
-    </a>
+{% if col.size > 0 %}
+<div class="column">
+  <div class="card docs-card">
+    <div class="card-header">
+      <div class="card-header-title">{{ col.title }}</div>
+    </div>
+    <div class="card-content">
+      {{ col.description }}
+    </div>
+    <div class="card-footer">
+      <a class="card-footer-item" href="{{ col.label | prepend: '/' | prepend: site.baseurl }}">
+        Learn More
+      </a>
+    </div>
   </div>
 </div>
+{% endif %}
