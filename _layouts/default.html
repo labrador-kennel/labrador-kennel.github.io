@@ -50,25 +50,7 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column">
-            {{ content }}
-          </div>
-
-          {% if site.data.package.name %}
-          <div class="column side-nav is-3">
-            <div class="menu">
-              <ul class="menu-list">
-                <li>{% include menu_nav_link.html url="/" label="Installation" %}</li>
-              </ul>
-
-              {% include menu_nav_section.html collection="tutorials" %}
-              {% include menu_nav_section.html collection="how-tos" %}
-              {% include menu_nav_section.html collection="references" %}
-            </div>
-          </div>
-          {% endif %}
-        </div>
+        {{ content }}
       </div>
     </section>
   </main>
