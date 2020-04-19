@@ -22,8 +22,27 @@
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
           <img src="img/labrador-kennel-logo.png" width="28" height="28" />
-          <h1 class="title is-3">Labrador Kennel {% if site.data.package.name %}{{site.data.package.name}}{% endif %}</h1>
+          <h1 class="title is-3">Labrador Kennel</h1>
         </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" id="navbarLinksMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarLinks" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="https://github.com/labrador-kennel" class="navbar-item">
+            <span class="icon is-medium">
+              <i class="fab fa-github-square fa-2x"></i>
+            </span>
+            <span class="is-hidden-desktop is-size-5">
+              GitHub
+            </span>
+          </a>
+        </div>
       </div>
     </nav>
   </header>
@@ -58,5 +77,14 @@
   {% for external_js in site.external_js %}
   <script src="{{ external_js }}"></script>
   {% endfor %}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menu = document.querySelector('#navbarLinksMenu');
+      menu.addEventListener('click', () => {
+        const links = document.querySelector('#navbarLinks');
+        links.classList.toggle('is-active');
+      });
+    });
+  </script>
 </body>
 </html>

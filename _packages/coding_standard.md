@@ -3,6 +3,6 @@ name: Coding Standard
 order: 5
 repo_url: https://github.com/labrador-kennel/coding-standard
 ---
-A variation of the PSR2 coding standard that eschews Allman style braces for the 
-<a href="https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)">OTBS</a>. Provides commands for 
-sniffing Labrador code that must pass before CI goes green.
+PSR2 that uses [OTBS] and CLI tools to help format your code.
+
+[OTBS]: https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)

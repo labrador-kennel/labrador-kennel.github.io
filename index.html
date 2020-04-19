@@ -3,13 +3,6 @@ layout: default
 title: Labrador Kennel Packages
 ---
 <div class="columns is-multiline is-centered">
-  <div class="column is-half is-narrow has-text-centered">
-    <p class="content">
-      Labrador is a suite of asynchronous PHP 7 packages written on top of <a href="https://amphp.org">Amp</a>. Our
-      goal is to design a set of libraries and frameworks that facilitates creating high-performing, well-tested,
-      cleanly-separated applications.
-    </p>
-  </div>
   <div class="column is-three-quarters-desktop is-full-mobile is-full-tablet">
     <div class="columns is-centered is-multiline">
       {% assign packages = site.packages | sort: 'order' %}
@@ -42,5 +35,10 @@ title: Labrador Kennel Packages
       </div>
       {% endfor %}
     </div>
+  </div>
+  <div class="column is-half is-narrow has-text-centered">
+    <p class="content">
+      A suite of asynchronous PHP 7 packages written on top of <a href="https://amphp.org">Amp</a>.
+    </p>
   </div>
 </div>
