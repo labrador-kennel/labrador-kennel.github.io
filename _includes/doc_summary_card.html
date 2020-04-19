@@ -1,6 +1,6 @@
 {% assign col = site.collections | where: 'label', include.collection | first %}
 
-{% if col.size > 0 %}
+{% if site[include.collection].size > 0 %}
 <div class="column">
   <div class="card docs-card">
     <div class="card-header">
