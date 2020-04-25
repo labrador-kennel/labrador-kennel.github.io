@@ -1,0 +1,120 @@
+#!/usr/bin/env php
+<?php declare(strict_types = 1);
+
+echo 'This program will setup the current working directory for Labrador Kennel docs/', PHP_EOL, PHP_EOL;
+echo 'What is the baseurl? ';
+$baseUrl = trim(fgets(STDIN));
+
+$configYaml = <<<YAML
+baseurl: "${baseUrl}"
+layouts_dir: ".shared/_layouts"
+includes_dir: ".shared/_includes"
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "package"
+  - scope:
+      path: "_how-tos"
+    values:
+      layout: "article"
+  - scope:
+      path: "_tutorials"
+    values:
+      layout: "article"
+  - scope:
+      path: "_references"
+    values::
+      layout: "article"
+collections:
+  tutorials:
+    output: true
+    permalink: "/:collection/:name"
+    title: "Tutorial"
+    description: "Learn how to get started with this library."
+  how-tos:
+    output: true
+    permalink: "/:collection/:name"
+    title: "How To"
+    description: "Learn how to complete specific tasks with this library."
+  references:
+    output: true
+    permalink: "/:collection/:name"
+    title: "References"
+    description: "Learn more about the technical workings of this library."
+YAML;
+
+$indexHtml = <<<HTML
+---
+layout: package
+---
+<p class="content">
+  INSERT PACKAGE DESCRIPTION
+</p>
+
+<h2 class="subtitle is-size-3">Installation</h2>
+<p class="content">
+  <a href="https://getcomposer.org">Composer</a> is the only supported method for installing this library.
+</p>
+<pre class="content"><code class="language-shell">composer require cspray/PACKAGE_NAME</code></pre>
+
+<h2 class="subtitle is-size-3">Getting Started</h2>
+{% include doc_summary_cards.html %}
+HTML;
+
+$howTosIndexHtml = <<<HTML
+---
+permalink: /how-tos/
+---
+<section class="section">
+  {% include collection_listing.html collection="how-tos" %}
+</section>
+HTML;
+
+$tutorialsIndexHtml = <<<HTML
+---
+permalink: /tutorials/
+---
+<section class="section">
+  {% include collection_listing.html collection="tutorials" %}
+</section>
+HTML;
+
+$referencesIndexHtml = <<<HTML
+---
+permalink: /references/
+---
+<section class="section">
+  {% include collection_listing.html collection="references" %}
+</section>
+HTML;
+
+
+$cwd = getcwd();
+
+foreach (['_how-tos', '_tutorials', '_references'] as $dir) {
+  mkdir($cwd . '/' . $dir);
+}
+
+$fileContents = [
+    '_config.yml' => $configYaml,
+    'index.html' => $indexHtml,
+    'how-tos-index.html' => $howTosIndexHtml,
+    'tutorials-index.html' => $tutorialsIndexHtml,
+    'references-index.html' => $referencesIndexHtml
+];
+
+foreach ($fileContents as $file => $content) {
+  file_put_contents($cwd . '/' . $file, $content);
+}
+
+$symLinks = [
+    '.shared/_sass' => '_sass',
+    '.shared/css' => 'css',
+    '.shared/img' => 'img',
+    '.shared/js' => 'js'
+];
+
+foreach ($symLinks as $target => $link) {
+  symlink($cwd . '/' . $target, $cwd . '/' . $link);
+}
