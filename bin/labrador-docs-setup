@@ -24,7 +24,7 @@ defaults:
       layout: "article"
   - scope:
       path: "_references"
-    values::
+    values:
       layout: "article"
 collections:
   tutorials:
