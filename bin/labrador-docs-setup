@@ -4,6 +4,18 @@
 echo 'This program will setup the current working directory for Labrador Kennel docs/', PHP_EOL, PHP_EOL;
 echo 'What is the baseurl? ';
 $baseUrl = trim(fgets(STDIN));
+$cwd = getcwd();
+
+$composerPath = dirname($cwd) . '/composer.json';
+if (file_exists($composerPath)) {
+  $composerData = json_decode(file_get_contents($composerPath), true);
+  $packageName = $composerData['name'] ?? 'cspray/[package-name]';
+  $packageDescription = $composerData['description'] ?? 'The description of this package goes here.';
+} else {
+  $packageName = 'cspray/[package-name]';
+  $packageDescription = 'The description of this package goes here.';
+}
+
 
 $configYaml = <<<YAML
 baseurl: "${baseUrl}"
@@ -24,7 +36,7 @@ defaults:
       layout: "article"
   - scope:
       path: "_references"
-    values::
+    values:
       layout: "article"
 collections:
   tutorials:
@@ -49,14 +61,14 @@ $indexHtml = <<<HTML
 layout: package
 ---
 <p class="content">
-  INSERT PACKAGE DESCRIPTION
+  ${packageDescription}
 </p>
 
 <h2 class="subtitle is-size-3">Installation</h2>
 <p class="content">
   <a href="https://getcomposer.org">Composer</a> is the only supported method for installing this library.
 </p>
-<pre class="content"><code class="language-shell">composer require cspray/PACKAGE_NAME</code></pre>
+<pre class="content"><code class="language-shell">composer require ${packageName}</code></pre>
 
 <h2 class="subtitle is-size-3">Getting Started</h2>
 {% include doc_summary_cards.html %}
@@ -90,10 +102,12 @@ permalink: /references/
 HTML;
 
 
-$cwd = getcwd();
 
 foreach (['_how-tos', '_tutorials', '_references'] as $dir) {
-  mkdir($cwd . '/' . $dir);
+  $path = $cwd . '/' . $dir;
+  if (!is_dir($path)) {
+      mkdir($path);
+  }
 }
 
 $fileContents = [
@@ -105,7 +119,10 @@ $fileContents = [
 ];
 
 foreach ($fileContents as $file => $content) {
-  file_put_contents($cwd . '/' . $file, $content);
+  $path = $cwd . '/' . $file;
+  if (!file_exists($path)) {
+      file_put_contents($path, $content);
+  }
 }
 
 $symLinks = [
@@ -116,5 +133,8 @@ $symLinks = [
 ];
 
 foreach ($symLinks as $target => $link) {
-  symlink($cwd . '/' . $target, $cwd . '/' . $link);
+  $fullPath = $cwd . '/' . $target;
+  if (!is_link($fullPath) && !is_dir($fullPath)) {
+      symlink($target, $cwd . '/' . $link);
+  }
 }
