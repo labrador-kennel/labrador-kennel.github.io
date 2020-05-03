@@ -5,7 +5,7 @@ layout: default
 <header>
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{site.baseurl}}">
+      <a class="navbar-item" href="{{site.baseurl}}/">
         <h1 class="title is-3">
           labrador{% if site.data.package.name %}/{{site.data.package.name}}{% endif %}
         </h1>
@@ -56,6 +56,24 @@ layout: default
             </div>
           </div>
         </a>
+        <div class="navbar-item">
+          <div class="dropdown-divider"></div>
+        </div>
+        {% if site['tutorials'].size > 0 %}
+        <a href="{{site.baseurl}}/tutorials" class="navbar-item is-hidden-desktop">
+          Tutorial
+        </a>
+        {% endif %}
+        {% if site['how-tos'].size > 0 %}
+        <a href="{{site.baseurl}}/how-tos" class="navbar-item is-hidden-desktop">
+          How To
+        </a>
+        {% endif %}
+        {% if site['references'].size > 0 %}
+        <a href="{{site.baseurl}}/references" class="navbar-item is-hidden-desktop">
+          Reference
+        </a>
+        {% endif %}
       </div>
     </div>
   </nav>
