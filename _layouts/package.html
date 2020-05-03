@@ -1,20 +1,71 @@
 ---
 layout: default
 ---
-<div class="columns">
-  <div class="column">
-    {{ content }}
-  </div>
 
-  <div class="column side-nav is-3">
-    <div class="menu">
-      <ul class="menu-list">
-        <li>{% include menu_nav_link.html url="/" label="Installation" %}</li>
-      </ul>
+<header>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="img/labrador-kennel-logo.png" width="28" height="28" />
+        <h1 class="title is-3">Labrador Kennel</h1>
+      </a>
 
-      {% include menu_nav_section.html collection="tutorials" %}
-      {% include menu_nav_section.html collection="how-tos" %}
-      {% include menu_nav_section.html collection="references" %}
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" id="navbarLinksMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-  </div>
-</div>
+
+    <div id="navbarLinks" class="navbar-menu">
+      <div class="navbar-end">
+        <a href="https://github.com/labrador-kennel" class="navbar-item">
+            <span class="icon is-medium">
+              <i class="fab fa-github-square fa-2x"></i>
+            </span>
+          <span class="is-hidden-desktop is-size-5">
+              GitHub
+            </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          {{ content }}
+        </div>
+
+        <div class="column side-nav is-3">
+          <div class="menu">
+            <ul class="menu-list">
+              <li>{% include menu_nav_link.html url="/" label="Installation" %}</li>
+            </ul>
+
+            {% include menu_nav_section.html collection="tutorials" %}
+            {% include menu_nav_section.html collection="how-tos" %}
+            {% include menu_nav_section.html collection="references" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menu = document.querySelector('#navbarLinksMenu');
+        menu.addEventListener('click', () => {
+            const links = document.querySelector('#navbarLinks');
+            links.classList.toggle('is-active');
+        });
+    });
+</script>

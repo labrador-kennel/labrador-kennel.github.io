@@ -1,6 +1,6 @@
 ---
-name: HTTP CORS
-order: 4
+name: http-cors
+order: 5
 repo_url: https://github.com/labrador-kennel/http-cors
 docs_url: /http-cors
 ---

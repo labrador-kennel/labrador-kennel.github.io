@@ -2,9 +2,25 @@
 layout: default
 title: Labrador Kennel Packages
 ---
-<div class="columns is-multiline is-centered">
-  <div class="column is-three-quarters-desktop is-full-mobile is-full-tablet">
-    <div class="columns is-centered is-multiline">
+<section class="hero is-medium homepage-splash">
+  <div class="hero-body">
+    <div class="container is-flex">
+      <figure class="image is-128x128">
+        <img src="img/labrador-kennel-logo.png" width="128px" height="128px" alt="Labrador Kennel logo" />
+      </figure>
+      <div class="is-block">
+        <h1 class="title is-marginless">Labrador Kennel</h1>
+        <p class="is-italic">
+          A suite of opinionated asynchronous PHP libraries built on top of <a href="https://amphp.org">amphp</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="columns is-multiline is-centered is-mobile package-grid">
+  <div class="column is-three-quarters-desktop is-four-fifths-mobile is-four-fifths-tablet">
+    <div class="columns is-centered is-multiline is-mobile">
       {% assign packages = site.packages | sort: 'order' %}
       {% for package in packages %}
       <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -16,12 +32,18 @@ title: Labrador Kennel Packages
             {{ package.content }}
           </div>
           <div class="card-footer">
-            <a href="{{ package.repo_url }}" class="card-footer-item">
-            <span class="icon">
-              <i class="fab fa-github"></i>
-            </span>
-              GitHub
-            </a>
+            {% if package.repo_url %}
+              <a href="{{ package.repo_url }}" class="card-footer-item">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+                GitHub
+              </a>
+            {% else %}
+              <div class="card-footer-item is-italic">
+                Coming soon!
+              </div>
+            {% endif %}
             {% if package.docs_url %}
             <a href="{{ package.docs_url }}" class="card-footer-item">
             <span class="icon">
@@ -35,10 +57,5 @@ title: Labrador Kennel Packages
       </div>
       {% endfor %}
     </div>
-  </div>
-  <div class="column is-half is-narrow has-text-centered">
-    <p class="content">
-      A suite of asynchronous PHP 7 packages written on top of <a href="https://amphp.org">Amp</a>.
-    </p>
   </div>
 </div>
