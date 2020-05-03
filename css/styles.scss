@@ -47,6 +47,11 @@ p {
   @extend .content;
 }
 
+pre.highlight {
+  @extend .is-paddingless;
+  margin: 1em 0;
+}
+
 /**
  =======================================================================================================================
  List styling rules
