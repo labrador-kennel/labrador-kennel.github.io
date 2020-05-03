@@ -21,13 +21,18 @@ layout: default
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-end">
         <a href="/" class="navbar-item">
-          <img src="{{site.baseurl}}/img/labrador-kennel-logo.png" width="28" height="28" />
+          <figure class="image is-square">
+            <img src="{{site.baseurl}}/img/labrador-kennel-logo.png" alt="Labrador Kennel logo" width="28" height="28" />
+          </figure>
+          <span class="is-hidden-desktop is-size-5">
+            labrador-kennel.io
+          </span>
         </a>
         <a href="https://github.com/labrador-kennel" class="navbar-item">
             <span class="icon is-medium">
               <i class="fab fa-github-square fa-2x"></i>
             </span>
-          <span class="is-hidden-desktop is-size-5">
+            <span class="is-hidden-desktop is-size-5">
               GitHub
             </span>
         </a>
@@ -46,10 +51,6 @@ layout: default
 
         <div class="column side-nav is-3">
           <div class="menu">
-            <ul class="menu-list">
-              <li>{% include menu_nav_link.html url="/" label="Installation" %}</li>
-            </ul>
-
             {% include menu_nav_section.html collection="tutorials" %}
             {% include menu_nav_section.html collection="how-tos" %}
             {% include menu_nav_section.html collection="references" %}
