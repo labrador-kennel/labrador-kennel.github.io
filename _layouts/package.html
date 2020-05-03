@@ -7,7 +7,7 @@ layout: default
     <div class="navbar-brand">
       <a class="navbar-item" href="{{site.baseurl}}">
         <h1 class="title is-3">
-          Labrador Kennel {% if site.data.package.name %}{{site.data.package.name}}{% endif %}
+          labrador{% if site.data.package.name %}/{{site.data.package.name}}{% endif %}
         </h1>
       </a>
 
@@ -21,20 +21,40 @@ layout: default
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-end">
         <a href="/" class="navbar-item">
-          <figure class="image is-square">
+          <div class="is-hidden-mobile">
             <img src="{{site.baseurl}}/img/labrador-kennel-logo.png" alt="Labrador Kennel logo" width="28" height="28" />
-          </figure>
-          <span class="is-hidden-desktop is-size-5">
-            labrador-kennel.io
-          </span>
+          </div>
+          <div class="is-hidden-desktop">
+            <div class="media">
+              <div class="media-left">
+                <img src="{{site.baseurl}}/img/labrador-kennel-logo.png" alt="Labrador Kennel logo" width="28" height="28" />
+              </div>
+              <div class="media-content">
+                labrador-kennel.io
+              </div>
+            </div>
+          </div>
         </a>
         <a href="https://github.com/labrador-kennel" class="navbar-item">
+          <div class="is-hidden-mobile">
             <span class="icon is-medium">
               <i class="fab fa-github-square fa-2x"></i>
             </span>
-            <span class="is-hidden-desktop is-size-5">
-              GitHub
-            </span>
+          </div>
+          <div class="is-hidden-desktop">
+            <div class="media">
+              <div class="media-left">
+                <span class="icon is-medium">
+                  <i class="fab fa-github-square fa-2x"></i>
+                </span>
+              </div>
+              <div class="media-content">
+                <span class="is-size-5">
+                  GitHub
+                </span>
+              </div>
+            </div>
+          </div>
         </a>
       </div>
     </div>
