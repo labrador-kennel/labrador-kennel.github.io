@@ -5,9 +5,10 @@ layout: default
 <header>
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="img/labrador-kennel-logo.png" width="28" height="28" />
-        <h1 class="title is-3">Labrador Kennel</h1>
+      <a class="navbar-item" href="{{site.baseurl}}">
+        <h1 class="title is-3">
+          Labrador Kennel {% if site.data.package.name %}- {{site.data.package.name}}{% endif %}
+        </h1>
       </a>
 
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" id="navbarLinksMenu">
@@ -19,6 +20,9 @@ layout: default
 
     <div id="navbarLinks" class="navbar-menu">
       <div class="navbar-end">
+        <a href="/" class="navbar-item">
+          <img src="{{site.baseurl}}/img/labrador-kennel-logo.png" width="28" height="28" />
+        </a>
         <a href="https://github.com/labrador-kennel" class="navbar-item">
             <span class="icon is-medium">
               <i class="fab fa-github-square fa-2x"></i>
