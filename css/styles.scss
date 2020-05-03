@@ -1,6 +1,6 @@
 ---
 ---
-@import 'bulma-0.7.4/bulma.sass';
+@import 'bulma-0.8.2/bulma.sass';
 
 .navbar-brand img {
   margin-right: .5em;
@@ -63,4 +63,30 @@ dd {
 
 .highlighter-rouge {
   margin: 1em 0 1em;
+}
+
+.homepage-splash .image {
+  margin-right: 1em;
+}
+
+.package-grid {
+  padding-bottom: 100px;
+}
+
+.built-by-tagline {
+  font-size: 16px;
+
+}
+
+.built-by-tagline .icon {
+  color: darkred;
+}
+
+.built-by-tagline img {
+  margin: auto .2em;
+}
+
+.logo-disclaimer {
+  margin-top: 3em;
+  font-size: 12px;
 }

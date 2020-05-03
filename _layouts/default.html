@@ -2,11 +2,13 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Labrador Kennel</title>
   <base href="{{ site.baseurl }}/" />
-  <link rel="shortcut icon" href="img/labrador-kennel-logo.png" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/highlight.css" />
+  <link rel="shortcut icon" href="{{site.baseurl}}/img/labrador-kennel-logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/highlight.css" />
   <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -18,59 +20,20 @@
   {% endfor %}
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="img/labrador-kennel-logo.png" width="28" height="28" />
-          <h1 class="title is-3">Labrador Kennel</h1>
-        </a>
+  {{ content }}
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" id="navbarLinksMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+  <footer class="footer">
+    <div class="container has-text-centered">
+      <div class="built-by-tagline">
+        Built with <span class="icon"><i class="fas fa-heart"></i></span> and <img src="{{site.baseurl}}/img/amp-logo.png" alt="Amp logo" height="16px" width="16px" /> by <a href="https://cspray.io">Charles Sprayberry</a>
       </div>
-
-      <div id="navbarLinks" class="navbar-menu">
-        <div class="navbar-end">
-          <a href="https://github.com/labrador-kennel" class="navbar-item">
-            <span class="icon is-medium">
-              <i class="fab fa-github-square fa-2x"></i>
-            </span>
-            <span class="is-hidden-desktop is-size-5">
-              GitHub
-            </span>
-          </a>
-        </div>
+      <div class="logo-disclaimer">
+        Organization logo by <a href="http://www.freepik.com">Freepik</a> from <a href="http://www.flaticon.com">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
       </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="section">
-      <div class="container">
-        {{ content }}
-      </div>
-    </section>
-  </main>
-
-  <script src="js/highlight.pack.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+    </div>
+  </footer>
   {% for external_js in site.external_js %}
   <script src="{{ external_js }}"></script>
   {% endfor %}
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menu = document.querySelector('#navbarLinksMenu');
-      menu.addEventListener('click', () => {
-        const links = document.querySelector('#navbarLinks');
-        links.classList.toggle('is-active');
-      });
-    });
-  </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 ---
-name: Async Event
-order: 2
+name: async-event
+order: 4
 repo_url: https://github.com/labrador-kennel/async-event
 docs_url: /async-event
 ---

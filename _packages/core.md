@@ -1,7 +1,7 @@
 ---
-name: Core
+name: core
 order: 1
 repo_url: https://github.com/labrador-kennel/core
 docs_url: /core
 ---
-Labrador's `stdlib` and how to build Labrador apps.
+Foundation for building Labrador apps and plugins.
