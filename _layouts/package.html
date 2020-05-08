@@ -92,6 +92,20 @@ layout: default
             {% include menu_nav_section.html collection="tutorials" %}
             {% include menu_nav_section.html collection="how-tos" %}
             {% include menu_nav_section.html collection="references" %}
+            {% if site.data.external_links %}
+            <p class="menu-label">
+              External Links
+            </p>
+            <ul class="menu-list">
+              {% for external_link in site.data.external_links %}
+              <li>
+                <a href="{{external_link.url}}">
+                  {{external_link.label}} <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
           </div>
         </div>
       </div>
