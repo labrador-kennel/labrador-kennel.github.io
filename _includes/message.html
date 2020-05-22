@@ -1,7 +1,9 @@
 <div class="message {{ include.message_type }}">
+    {% if include.title %}
     <div class="message-header">
         {{include.title}}
     </div>
+    {% endif %}
     <div class="message-body">
         {{include.body}}
     </div>

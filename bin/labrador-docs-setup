@@ -56,23 +56,26 @@ collections:
     description: "Learn more about the technical workings of this library."
 YAML;
 
-$indexHtml = <<<HTML
+$indexMarkdown = <<<MARKDOWN
 ---
 layout: package
 ---
-<p class="content">
-  ${packageDescription}
-</p>
+${packageDescription}
 
-<h2 class="subtitle is-size-3">Installation</h2>
-<p class="content">
-  <a href="https://getcomposer.org">Composer</a> is the only supported method for installing this library.
-</p>
-<pre class="is-paddingless"><code class="language-shell">composer require ${packageName}</code></pre>
+## Installation
 
-<h2 class="subtitle is-size-3">Getting Started</h2>
+[Composer] is the only supported method for installing this library.
+
+```shell
+composer require ${packageName}</code></pre>
+```
+
+## Getting Started
+
 {% include doc_summary_cards.html %}
-HTML;
+
+[Composer]: https://getcomposer.org
+MARKDOWN;
 
 $howTosIndexHtml = <<<HTML
 ---
@@ -112,7 +115,7 @@ foreach (['_how-tos', '_tutorials', '_references'] as $dir) {
 
 $fileContents = [
     '_config.yml' => $configYaml,
-    'index.html' => $indexHtml,
+    'index.md' => $indexMarkdown,
     'how-tos-index.html' => $howTosIndexHtml,
     'tutorials-index.html' => $tutorialsIndexHtml,
     'references-index.html' => $referencesIndexHtml
